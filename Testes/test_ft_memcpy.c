@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:12:05 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/21 04:16:29 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/23 14:17:08 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	check_memcpy(char *str1, char *str2);
+void	compair_memcpy(char *d, const char *s, char *dft, const char *sft, size_t ncpy);
+void	*check_memcpy(char *str1, char *str2, size_t ncpy);
 
 void	test_ft_memcpy()
 {
@@ -25,6 +26,10 @@ void	test_ft_memcpy()
 	destination and source parameters shall be at least n bytes, and should not overlap
 	*/
 
+	/*
+	O src nao muda porque ele eh do tipo const?
+	*/
+
 	printf("\n\n\n*****************************ft_memcpy function*****************************\n");
 
 	printf("\ntest 1: n = strlen(src) \n");
@@ -32,82 +37,91 @@ void	test_ft_memcpy()
 	char dest1ft[] = "This is the destination.";
 	char src1[] = "This is the source.";
 	size_t cpy1 = strlen(src1);
-	printf("dest memcpy = %s\n", dest1);
-	printf("dest ft_memcpy = %s\n", dest1ft);
-	printf("src = %s\n", src1);
-	memcpy(&dest1[0], &src1[0], cpy1);
-	puts(dest1);
-	ft_memcpy(&dest1ft[0], &src1[0], cpy1);
-	puts(dest1ft);
-	check_memcpy(&dest1[0], &dest1ft[0]);
+	compair_memcpy(&dest1[0], &src1[0], &dest1ft[0], &src1[0], cpy1);
 
 	printf("\ntest 2: n = strlen(src) + null\n");
 	char dest2[] = "This is the destination.";
 	char dest2ft[] = "This is the destination.";
 	char src2[] = "This is the source.";
 	size_t cpy2 = 21;
-	printf("dest memcpy = %s\n", dest2);
-	printf("dest ft_memcpy = %s\n", dest2ft);
-	printf("src = %s\n", src2);
-	memcpy(&dest2[0], &src2[0], cpy2);
-	puts(dest2);
-	ft_memcpy(&dest2ft[0], &src2[0], cpy2);
-	puts(dest2ft);
-	check_memcpy(&dest2[0], &dest2ft[0]);
+	compair_memcpy(&dest2[0], &src2[0], &dest2ft[0], &src2[0], cpy2);
 
 	printf("\ntest 3: n = 0\n");
 	char dest3[] = "destination.";
 	char dest3ft[] = "destination.";
 	char src3[] = "source.";
 	size_t cpy3 = 0;
-	printf("dest memcpy = %s\n", dest3);
-	printf("dest ft_memcpy = %s\n", dest3ft);
-	printf("src = %s\n", src3);
-	memcpy(&dest3[0], &src3[0], cpy3);
-	puts(dest3);
-	ft_memcpy(&dest3ft[0], &src3[0], cpy3);
-	puts(dest3ft);
-	check_memcpy(&dest3[0], &dest3ft[0]);
+	compair_memcpy(&dest3[0], &src3[0], &dest3ft[0], &src3[0], cpy3);
 
-	printf("\ntest 4: result = not ok because of overlap (n = strlen(src) > strlen(dest)\n");
+	printf("\ntest 4: overlap: d < s, n = strlen(s) > strlen(d)\n");
+	/* obs: here the correct use of memcpy function shall be with the strlen(dest) >= ncpy
+	in this case >= 65*/
 	char dest4[] = "This is the destination.";
+	char src4[100] = "This is the source. It is much more bigger than the destination.";
 	char dest4ft[] = "This is the destination.";
-	char src4[] = "This is the source. It is much more bigger than the destination.";
+	char src4ft[100] = "This is the source. It is much more bigger than the destination.";
 	size_t cpy4 = strlen(src4);
-	printf("dest memcpy = %s\n", dest4);
-	printf("dest ft_memcpy = %s\n", dest4ft);
-	printf("src = %s\n", src4);
-	memcpy(&dest4[0], &src4[0], cpy4);
-	puts(dest4);
-	ft_memcpy(&dest4ft[0], &src4[0], cpy4);
-	puts(dest4ft);
-	puts(dest4);
-	check_memcpy(&dest4[0], &dest3ft[0]);
+	compair_memcpy(&dest4[0], &src4[0], &dest4ft[0], &src4ft[0], cpy4);
+
+	/*printf("\ntest 4.1: overlap: d < s, n = strlen(s) > strlen(d)\n");
+	char dest41ft[] = "This is the destination.";
+	char src41ft[100] = "This is the source. It is much more bigger than the destination.";
+	printf("Applying memcpy:\n");
+	puts(memcpy(&dest41ft[0], &src41ft[0], cpy4));
+	printf("The source after applying the functions:\n");
+	puts(src41ft);
+	printf("&dest41ft[%lu] : %p --endereco\n", strlen(dest41ft) - 47, &dest41ft[strlen(dest41ft) - 47]);
+	printf("&src4ft[17] : %p --endereco\n", &src4ft[17]);
+	puts(src4ft);*/
+
+	printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
+	char src5[100] = "This is the source. It is much more bigger than the destination.";
+	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
+	size_t cpy5 = strlen(src5);
+	compair_memcpy(&src5[10], &src5[0], &src5ft[10], &src5ft[0], cpy5);
+
+	printf("\ntest 6: overlap: d is in the middle of s\n");
+	char src6[50] = "Geeksfor";
+	char src6ft[50] = "Geeksfor";
+	compair_memcpy(src6+5, src6, src6ft+5, src6ft, strlen(src6)+1);
+
+	printf("\ntest 7: overlap: s is in the middle of d\n");
+	/* obs: here the correct use of memcpy function shall be with the strlen(dest) >= ncpy
+	in this case >= 65*/
+	char dest7[100] = "Oi, tudo bem?";
+	char dest7ft[100] = "Oi, tudo bem?";
+	size_t cpy7 = 9;
+	compair_memcpy(&dest7[0], &dest7[4], &dest7ft[0], &dest7ft[4], cpy7);
 }
 
-void	check_memcpy(char *str1, char *str2)
+void	compair_memcpy(char *d, const char *s, char *dft, const char *sft, size_t ncpy)
+{
+	printf("src = %s\n", s);
+	printf("dest memcpy = %s\n", d);
+	printf("dest ft_memcpy = %s\n", dft);
+	printf("Applying memcpy and ft_memcpy:\n");
+	puts(memcpy(&d[0], &s[0], ncpy));
+	puts(ft_memcpy(&dft[0], &sft[0], ncpy));
+	printf("The sources after applying the functions:\n");
+	puts(s);
+	puts(sft);
+	puts(check_memcpy(&d[0], &dft[0], ncpy));
+}
+
+void	*check_memcpy(char *str1, char *str2, size_t ncpy)
 {
 	size_t i = 0;
 
-	if (strlen(str1) != strlen(str2))
+	while (i < ncpy)
 	{
-		printf("NOT OK\n");
-		printf("destination final size from memcpy function: %lu\n", strlen(str1));
-		printf("destination final size from ft_memcpy function: %lu\n", strlen(str2));
-	}
-	else
-	{
-		while (i < strlen(str1))
+		if (str1[i] != str2[i])
 		{
-			if (str1[i] != str2[i])
-			{
-				printf("NOT OK at position %lu\n", i);
-				printf("memcpy value: %c\n", str1[i]);
-				printf("ft_memcpy value: %c\n", str2[i]);
-			}
-			else
-				printf("OK at position %lu\n", i);
-			i++;
+			printf("NOT OK at position %lu\n", i);
+			printf("memcpy value: %c\n", str1[i]);
+			printf("ft_memcpy value: %c\n", str2[i]);
+			return("NOT OK");
 		}
+		i++;
 	}
+	return ("OK");
 }
