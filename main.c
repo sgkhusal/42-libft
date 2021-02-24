@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 02:18:20 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/21 04:17:17 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:39:11 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 //ok void	test_ft_bzero();
 //ok void	test_ft_memcpy();
 //ok void	test_ft_memccpy();
-void	test_ft_memmove();
-//void	*ft_memcpy(void *dest, const void *src, size_t len);
+//ok void	test_ft_memmove();
+void	test_ft_memchr();
+void	test_ft_memcmp();
 //ok void	test_ft_strlen();
 //size_t	ft_strlcpy (char *dest, const char *src, size_t size);
 //ok void	test_ft_isalpha();
@@ -39,7 +40,9 @@ int		main()
 	//ok test_ft_bzero();
 	//ok test_ft_memcpy();
 	//ok test_ft_memccpy();
-	test_ft_memmove();
+	//ok test_ft_memmove();
+	test_ft_memchr();
+	test_ft_memcmp();
 	//ok test_ft_strlen();
 	//ok test_ft_isalpha();
 	//ok test_ft_isdigit();
