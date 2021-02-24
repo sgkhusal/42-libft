@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 04:04:11 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/23 14:21:25 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:28:18 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,39 @@ void	test_ft_memmove()
 	compair_memmove(src6+5, src6, src6ft+5, src6ft, strlen(src6)+1);
 
 	printf("\ntest 7: overlap: s is in the middle of d\n");
-	/* obs: here the correct use of memmove function shall be with the strlen(dest) >= ncpy
-	in this case >= 65*/
 	char dest7[100] = "Oi, tudo bem?";
 	char dest7ft[100] = "Oi, tudo bem?";
 	size_t cpy7 = 9;
 	compair_memmove(&dest7[0], &dest7[4], &dest7ft[0], &dest7ft[4], cpy7);
+
+	printf("\ntest 8: src = null\n");
+	char src8[100] = "Welcome to 42";
+	char src8ft[100] = "Welcome to 42";
+	char dest8[100] = "Hello World";
+	char dest8ft[100] = "Hello World";
+	src8[0] = '\0';
+	src8ft[0] = '\0';
+	compair_memmove(&dest8[0], &src8[0], &dest8ft[0], &src8ft[0], 9);
+
+	printf("\ntest 9: dest = null\n");
+	char src9[100] = "Welcome to 42";
+	char src9ft[100] = "Welcome to 42";
+	char dest9[100] = "Hello World";
+	char dest9ft[100] = "Hello World";
+	dest9[0] = '\0';
+	dest9ft[0] = '\0';
+	compair_memmove(&dest9[0], &src9[0], &dest9ft[0], &src9ft[0], 9);
+
+	printf("\ntest 10: dest and scr = null\n");
+	char src10[100] = "Welcome to 42";
+	char src10ft[100] = "Welcome to 42";
+	char dest10[100] = "Hello World";
+	char dest10ft[100] = "Hello World";
+	dest10[0] = '\0';
+	dest10ft[0] = '\0';
+	src10[0] = '\0';
+	src10ft[0] = '\0';
+	compair_memmove(&dest10[0], &src10[0], &dest10ft[0], &src10ft[0], 9);
 }
 
 void	compair_memmove(char *d, const char *s, char *dft, const char *sft, size_t ncpy)
