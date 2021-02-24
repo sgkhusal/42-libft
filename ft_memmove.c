@@ -6,14 +6,11 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 04:04:14 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/23 18:31:40 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:52:45 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <string.h>//
-
-void	*ft_memcpy(void *dest, const void *src, size_t n);//
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

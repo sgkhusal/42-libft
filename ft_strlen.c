@@ -6,13 +6,11 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 21:19:04 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/17 15:27:49 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:54:46 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen (const char *str)
 {

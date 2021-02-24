@@ -6,12 +6,11 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 00:18:14 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/14 00:39:13 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:55:20 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <string.h>
+#include "libft.h"
 
 int	strncmp(const char *s1, const char *s2, size_t n)
 {

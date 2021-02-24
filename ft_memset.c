@@ -6,12 +6,11 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 03:23:32 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/17 15:58:53 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:53:44 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t len)
 {
