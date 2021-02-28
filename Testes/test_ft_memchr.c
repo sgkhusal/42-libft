@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 13:13:39 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/24 22:11:32 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:46:38 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n);
-void	*compair_memchr(char *s, int c, size_t n);
+void	compair_memchr(char *s, int c, size_t n);
 
 void	test_ft_memchr()
 {
@@ -46,19 +46,15 @@ void	test_ft_memchr()
 	compair_memchr(&str1[0], 'd', strlen(str1));
 }
 
-void	*compair_memchr(char *s, int c, size_t n)
+void	compair_memchr(char *s, int c, size_t n)
 {
 	unsigned char *ptr;
 	unsigned char *ptrft;
 	printf("Content from memory area = %s\n", s);
 	ptr = memchr(&s[0], c, n);
 	ptrft = ft_memchr(&s[0], c, n);
-	if (ptr == ptrft)
-		return ("OK");
-	else
-	{
-		printf("memchr result = %p:\n", ptr);
-		printf("ft_memchr result = %p:\n", ptrft);
-		return("NOT OK");
-	}
+	printf("return from memchr - string    = %s\n", ptr);
+	printf("return from ft_memchr - string = %s\n", ptrft);
+	printf("return from memchr - memory address    = %p\n", ptr);
+	printf("return from ft_memchr - memory address = %p\n", ptrft);
 }

@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:39:46 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/24 21:45:37 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:11:58 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,4 @@ void	test_ft_memcmp()
 	printf("\n");
 	printf("%d", memcmp("ABCDEIII", "ABCDE\0GH", 8));
 	printf("\n--------\n");
-
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:12:00 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/24 21:40:33 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:14:28 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-int		test_ft_strncmp(void)
+void		test_ft_strncmp(void)
 {
 	//char string1[] = "Curso de C";
 	//char string2[] = "Curso de Java";
@@ -129,6 +129,4 @@ int		test_ft_strncmp(void)
 	printf("\n");
 	printf("%d", strncmp("ABCDEIII", "ABCDE\0GH", 8));
 	printf("\n--------\n");
-
-	return (0);
 }

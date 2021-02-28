@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:12:13 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/24 23:26:01 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/02/27 16:36:37 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,26 +52,32 @@ void	test_ft_strlcpy()
 	char src32[] = "source.";
 	compair_strlcpy(&dest32[0], &dest32ft[0], &src32[0], &src32[0], 2);
 
+	printf("\ntest 3.3: n = -1\n");
+	char dest33[] = "destination.";
+	char dest33ft[] = "destination.";
+	char src33[] = "source.";
+	compair_strlcpy(&dest33[0], &dest33ft[0], &src33[0], &src33[0], 2);
+
 	printf("\ntest 4: n > strlen(d)\n");
 	char dest4[] = "This is the destination.";
 	char src4[100] = "This is the source. It is much more bigger than the destination.";
 	char dest4ft[] = "This is the destination.";
 	compair_strlcpy(&dest4[0], &dest4ft[0], &src4[0], &src4[0], strlen(src4) + 1);
 
-	printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
+	/*printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
 	char src5[100] = "This is the source. It is much more bigger than the destination.";
 	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
 	compair_strlcpy(&src5[10], &src5ft[10], &src5[0], &src5ft[0], strlen(src5) + 1);
 
 	printf("\ntest 6: overlap: d is in the middle of s\n");
-	char src6[] = "Geeksfor";
-	char src6ft[] = "Geeksfor";
+	char src6[50] = "Geeksfor\0";
+	char src6ft[50] = "Geeksfor\0";
 	compair_strlcpy(src6+5, src6ft+5, src6, src6ft, strlen(src6)+1);
 
 	printf("\ntest 7: overlap: s is in the middle of d\n");
 	char dest7[] = "Oi, tudo bem?";
 	char dest7ft[] = "Oi, tudo bem?";
-	compair_strlcpy(&dest7[0], &dest7ft[0], &dest7[4], &dest7ft[4], 9);
+	compair_strlcpy(&dest7[0], &dest7ft[0], &dest7[4], &dest7ft[4], 10);*/
 
 	printf("\ntest 8: src = null\n");
 	char src8[100] = "Welcome to 42";
@@ -103,7 +109,8 @@ void	compair_strlcpy(char *d1, char *d2, char *s1, char *s2, size_t n)
 	size_t strlcpy_return;
 	size_t ft_strlcpy_return;
 	printf("src = %s\n", s1);
-	printf("dest strlcpy = %s\n", d1);
+	printf("strlen of src = %lu\n", strlen(s1));
+	printf("dest strlcpy    = %s\n", d1);
 	printf("dest ft_strlcpy = %s\n", d2);
 	strlcpy_return = strlcpy(&d1[0], &s1[0], n);
 	ft_strlcpy_return = ft_strlcpy(&d2[0], &s2[0], n);
@@ -118,11 +125,10 @@ void	compair_strlcpy(char *d1, char *d2, char *s1, char *s2, size_t n)
 
 void	*check_strlcpy(size_t ncpy1, size_t ncpy2)
 {
+	printf("strlcpy value: %lu\n", ncpy1);
+	printf("ft_strlcpy value: %lu\n", ncpy2);
 	if (ncpy1 != ncpy2)
-	{
-		printf("strlcpy value: %lu\n", ncpy1);
-		printf("ft_strlcpy value: %lu\n", ncpy2);
 		return("NOT OK");
-	}
-	return ("OK");
+	else
+		return ("OK");
 }
