@@ -6,7 +6,7 @@
 #    By: sguilher <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/12 02:08:39 by sguilher          #+#    #+#              #
-#    Updated: 2021/02/18 02:45:50 by sguilher         ###   ########.fr        #
+#    Updated: 2021/03/01 19:28:35 by sguilher         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,14 @@
 
 NAME		= libft.a
 
-SRCS		= $(wildcard ft_*.c) # wildcard allows to use * in variables
-# acho que nao pode usar wildcard - eh uma funcao!!!
+SRCS		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
+				ft_memmove.c ft_memchr.c ft_memcmp.c \
+				ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c \
+				ft_strrchr.c ft_strnstr.c ft_strncmp.c \
+				ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
+				ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+				ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
+				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJS		= ${SRCS:.c=.o}
 
@@ -27,37 +33,18 @@ CFLAGS		= -Wall -Wextra -Werror
 
 RM		= rm -f # removes 'Read only File' without asking
 
-######################
-# tirar!!
-MAIN		= main.c
-TEST		= test
-########################
-
 # Rules
 
 # Convert .c files to objects files (.o)
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-# outra forma (achei mais entendivel - sera que funciona?):
-# %.o:		%.c
-		# ${CC} ${CFLAGS} -c $< # $< refere-se aos arquivos .c - a entrada
-# % equivale ao * para as rules
+%.o:	%.c
+		${CC} ${CFLAGS} -c $< -o $@
+# $< refere-se aos arquivos .c - a entrada
+# $@ = saida (no caso, OBJS)
 
-# a biblioteca compila os arquivos .c em .o --> gcc -c arquivo.c
 ${NAME}:	${OBJS}
-		ar rc $@ ${OBJS} # $@ = ${NAME}
-		ranlib $@ # cria um sumario da biblioteca que permite a compilacao mais rapida
-
-##############################
-# tirar!!
-${TEST}:	${MAIN}
-		${CC} ${CFLAGS} $< -o $@ -L. lft
-# -L indica o diretorio onde esta a biblioteca (no caso, .)
-# lft --> l = link --> faz procurar por libft.a
-
-run:		${TEST}
-		./$<
-###############################
+		ar rc $@ ${OBJS}
+		ranlib $@
+# ran lib cria um sumario da biblioteca que permite a compilacao mais rapida
 
 all:		${NAME}
 

@@ -1,3 +1,5 @@
 a.out
 Testes/Paralelos/
 libft.h.gch
+*.o
+libft.a
