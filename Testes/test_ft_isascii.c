@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 02:06:50 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 02:56:40 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:34:51 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	test_ft_isascii()
 	unsigned char not_ascii1 = 128;
 	unsigned char not_ascii2 = 255;
 	char not_ascii3 = EOF;
-	int i = 0;
+	unsigned long i = 0;
 
 	/********************* test 1 - ascii *****************/
 	printf("Test for string \"%s\":\n", str_ascii1);

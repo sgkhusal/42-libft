@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 01:44:54 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 02:00:58 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:30:47 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	test_ft_isalnum()
 	char not_alnum7 = 123;
 	unsigned char not_alnum8 = 255;
 	char not_alnum9 = EOF;
-	int i = 0;
+	unsigned long int i = 0;
 
 	/********************* test 1 - alnum *****************/
 	printf("Test for string \"%s\":\n", str_alnum);

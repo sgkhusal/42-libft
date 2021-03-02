@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 16:16:36 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/27 16:55:53 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:42:05 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strrchr(const char *s, int c);
 void	compair_strrchr(char *s, int c);
 
-void	test_ft_strchr(void)
+void	test_ft_strrchr(void)
 {
 	printf("\n\n\n*****************************ft_strrchr function*****************************\n");
 

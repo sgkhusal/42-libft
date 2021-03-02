@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:54:04 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/26 16:41:42 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 17:44:05 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nb / 10, fd);
 	ft_putchar_fd('0' + nb % 10, fd);
 }
-
-

@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 14:53:26 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 22:51:13 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:36:57 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	test_ft_toupper()
 	unsigned char not_print6 = 255;
 	char not_print7 = EOF;
 	char not_print8 = EOF;
-	int i = 0;
+	unsigned long i = 0;
 
 	/********************* test 1 - char printable *****************/
 	printf("Test for string \"%s\":\n", str1);

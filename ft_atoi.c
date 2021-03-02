@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 12:40:06 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/28 02:54:35 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 17:52:53 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_atoi(const char *nptr)
 		i++;
 	while (ft_isdigit(nptr[i]))
 	{
-		n = n * 10 +(nptr[i] - 48);
+		n = n * 10 + (nptr[i] - 48);
 		i++;
 	}
 	if (sign == -1)

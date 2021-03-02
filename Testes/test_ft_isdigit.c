@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 00:57:51 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 01:30:35 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:35:28 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	test_ft_isdigit()
 	unsigned char not_digit4 = 255;
 	char not_digit5 = EOF;
 	char str[] = "azAZ";
-	int i = 0;
+	unsigned long i = 0;
 
 	/********************* test 1 - digit *****************/
 	printf("Test for string \"%s\":\n", str_digit);

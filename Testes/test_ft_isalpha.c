@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:15:35 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 01:42:35 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:34:06 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	test_ft_isalpha()
 	char not_alpha3 = 96;
 	unsigned char not_alpha4 = 255;
 	char not_alpha5 = EOF;
-	int i = 0;
+	unsigned long i = 0;
 
 	/********************* test 1 - all alpha *****************/
 	printf("Test for string \"%s\":\n", str_alpha);

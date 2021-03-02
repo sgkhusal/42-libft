@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 01:55:41 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/24 15:53:06 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 18:22:28 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	i = 0;
 	destination = (unsigned char *)dest;
 	source = (unsigned char *)src;
-	while (i < n)
+	while (i < n && source[i])
 	{
 		destination[i] = source[i];
 		if (source[i] == (unsigned char)c)
-			return (&dest[i + 1]);
+			return (dest + i + 1);
 		i++;
 	}
 	return (NULL);

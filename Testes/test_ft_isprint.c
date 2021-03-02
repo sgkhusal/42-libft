@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 02:09:44 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/16 14:37:36 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/01 19:36:05 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	test_ft_isprint()
 	unsigned char not_print4 = 255;
 	char not_print5 = EOF;
 	unsigned char not_print6 = 132;
-	int i = 0;
+	unsigned long i = 0;
 
 	/********************* test 1 - printable *****************/
 	printf("Test for string \"%s\":\n", str_print1);
