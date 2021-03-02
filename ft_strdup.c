@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 02:38:06 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/01 22:22:52 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/02 04:36:22 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	size_t	i;
 	size_t	size;
 
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s) + 1;
 	if (!(copy = (char *)malloc(size * sizeof(char))))
 		return (NULL);

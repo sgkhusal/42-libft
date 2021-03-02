@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 02:07:33 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/02 03:25:02 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/02 05:04:34 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,25 @@ void	test_ft_strjoin(void)
 	str1[0] = '\0';
 	check_strjoin((char const *)ptr1, (char const *)ptr2);
 
-	/*printf("\ntest 3: !s1\n");*/
-	char *ptr3;
-	/*check_strjoin((char const *)ptr3, (char const *)ptr2);*/
-
-	printf("\ntest 4: s2 = \\0\n");
-	char *str3 = "Hello World!!";
+	printf("\ntest 3: s2 = \\0\n");
+	char *ptr3 = "Hello World!!";
 	str2[0] = '\0';
-	check_strjoin((char const *)str3, (char const *)ptr2);
+	check_strjoin((char const *)ptr3, (char const *)ptr2);
 
-	/*printf("\ntest 5: !s2\n");*/
-	char *ptr4;
-	/*check_strjoin((char const *)str3, (char const *)ptr4);*/
-
-	printf("\ntest 6: s1[0] = \\0 e s2[0] = \\0\n");
+	printf("\ntest 4: s1[0] = \\0 e s2[0] = \\0\n");
 	check_strjoin((char const *)ptr1, (char const *)ptr2);
 
-	printf("\ntest 7: !s1 && !s2 (apontam para nenhum lugar)\n");
-	check_strjoin((char const *)ptr3, (char const *)ptr4);
+	printf("\ntest 5: !s1 && !s2 (apontam para nenhum lugar)\n");
+	char *ptr4;
+	char *ptr5;
+	check_strjoin((char const *)ptr4, (char const *)ptr5);
+
+	printf("\ntest 6: !s1 (aponta para nenhum lugar)\n");
+	char *ptr6;
+	check_strjoin((char const *)ptr6, (char const *)ptr3);
+
+	printf("\ntest 7: !s2 (aponta para nenhum lugar)\n");
+	/*check_strjoin((char const *)ptr3, (char const *)ptr4);*/
 }
 
 void	check_strjoin(char const *s1, char const *s2)
