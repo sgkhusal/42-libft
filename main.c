@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 02:18:20 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/02 22:10:26 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/03 20:08:23 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ void	test_ft_tolower(void);
 void	test_ft_calloc(void);
 void	test_ft_strdup(void);
 void	test_ft_substr(void);
-void	test_ft_strjoin(void);*/
+void	test_ft_strjoin(void);
 void	test_ft_strtrim(void);
+void	test_ft_split(void);
+void	test_ft_itoa(void);*/
+void	test_ft_strmapi(void);
 //void	test_ft_put_fd(void);
 
 int		main()
@@ -73,8 +76,11 @@ int		main()
 	test_ft_calloc();
 	test_ft_strdup();
 	test_ft_substr();
-	test_ft_strjoin();*/
+	test_ft_strjoin();
 	test_ft_strtrim();
+	test_ft_split();
+	test_ft_itoa();*/
+	test_ft_strmapi();
 	//test_ft_put_fd();
 
 	return(0);
