@@ -42,7 +42,7 @@ void	test_ft_split(void)
 	result_split(&s5[0], 'a');
 
 	printf("\ntest 6: s = NULL\n");
-	char const *p6;
+	char const *p6 = NULL;
 	result_split(p6, 'a');
 
 	printf("\ntest 7:\n");

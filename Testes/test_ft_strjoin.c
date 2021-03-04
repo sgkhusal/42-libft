@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 02:07:33 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/04 01:17:14 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 14:39:35 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	test_ft_strjoin(void)
 	check_strjoin((char const *)ptr1, (char const *)ptr2);
 
 	printf("\ntest 5: !s1 && !s2 (apontam para nenhum lugar)\n");
-	char *ptr4;
-	char *ptr5;
+	char *ptr4 = NULL;
+	char *ptr5 = NULL;
 	check_strjoin((char const *)ptr4, (char const *)ptr5);
 
 	printf("\ntest 6: !s1 (aponta para nenhum lugar)\n");
-	char *ptr6;
+	char *ptr6 = NULL;
 	check_strjoin((char const *)ptr6, (char const *)ptr3);
 
 	printf("\ntest 7: !s2 (aponta para nenhum lugar)\n");

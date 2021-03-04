@@ -83,11 +83,11 @@ void	test_ft_strtrim(void)
 
 	printf("\ntest 12: set points to nothing \n");
 	char const *s12 = "Hello World!";
-	char const *set12;
+	char const *set12 = NULL;
 	result_strtrim(s12, set12);
 
 	printf("\ntest 13: s points to nothing \n");
-	char const *s13;
+	char const *s13 = NULL;
 	char const *set13 = "0123";
 	result_strtrim(s13, set13);
 }
