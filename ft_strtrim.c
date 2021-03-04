@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:56:43 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/03 04:03:25 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 01:30:07 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if (!s1)
 		return (NULL);
 	if (!set || ft_strlen(set) == 0)
-		return ((char *)s1); // ou retorna NULL para o !set?
+		return ((char *)s1);
 	i = initial_trim(s1, set);
 	if (i == 0)
 		return ("\0");

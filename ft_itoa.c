@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:53:38 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/03 19:56:55 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 01:28:42 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int				nbsize(int n)
 	return (size);
 }
 
-char				*ft_itoa(int n)
+char					*ft_itoa(int n)
 {
 	unsigned int	nb;
 	char			*charnb;
@@ -60,4 +60,3 @@ char				*ft_itoa(int n)
 		charnb[0] = '-';
 	return (charnb);
 }
-//testar input n'ao numero
