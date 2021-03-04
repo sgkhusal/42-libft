@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 01:55:35 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/23 20:22:26 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 11:37:40 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ void	test_ft_memccpy()
 	char src4[] = "A";
 	compair_memccpy(&dest4[0], &src4[0], &dest4ft[0], &src4[0], 0, 10);
 
-	printf("\ntest 5: overlap: dest inicialize in the middle of src, c = m\n");
+/*	printf("\ntest 5: overlap: dest inicialize in the middle of src, c = m\n");
 	char src5[100] = "This is the source. It is much more bigger than the destination.";
 	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
 	compair_memccpy(&src5[10], &src5[0], &src5ft[10], &src5ft[0], 'e', strlen(src5));
 
-	printf("\ntest 6: overlap: d is in the middle of s\n");
+*/	printf("\ntest 6: overlap: d is in the middle of s\n");
 	char src6[50] = "Geeksfor";
 	char src6ft[50] = "Geeksfor";
 	compair_memccpy(src6+5, src6, src6ft+5, src6ft, 'k', strlen(src6)+1);

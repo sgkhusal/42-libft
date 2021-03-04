@@ -6,13 +6,13 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 16:16:36 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/27 22:01:59 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 11:05:00 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 void	compair_strnstr(const char *b, const char *l, size_t len);

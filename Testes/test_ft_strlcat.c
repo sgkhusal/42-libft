@@ -6,13 +6,13 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 21:25:20 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/27 16:37:09 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 11:16:47 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 size_t	ft_strlcat (char *dst, const char *src, size_t size);
 void	compair_strlcat(char *d1, char *d2, char *s1, char *s2, int n);
@@ -53,7 +53,7 @@ void	test_ft_strlcat()
 	printf("dest size = %lu\n", sizeof(dest32));
 	compair_strlcat(&dest32[0], &dest32ft[0], &src32[0], &src32[0], 2);
 
-	printf("\ntest 3.3: n = -1\n");
+	/*printf("\ntest 3.3: n = -1\n");
 	char dest33[20] = "destination.";
 	char dest33ft[20] = "destination.";
 	char src33[] = "source.";
@@ -67,16 +67,16 @@ void	test_ft_strlcat()
 	printf("strlen of dst = %lu\n", strlen(dest33));
 	printf("dest strlcat    = %s\n", dest33);
 	printf("dest ft_strlcat = %s\n", dest33ft);
-	strlcat_return = strlcat(&dest33[0], &src33[0], -1);
+	//strlcat_return = strlcat(&dest33[0], &src33[0], -1);
 	ft_strlcat_return = ft_strlcat(&dest33ft[0], &src33[0], -1);
 	printf("The destinations after applying the functions:\n");
-	puts(dest33);
+	//puts(dest33);
 	puts(dest33ft);
 	printf("The sources after applying the functions:\n");
-	puts(src33);
+	//puts(src33);
 	puts(src33);
 	printf("strlen of src = %lu\n", strlen(src33));
-	puts(check_strlcat(strlcat_return, ft_strlcat_return));
+	puts(check_strlcat(strlcat_return, ft_strlcat_return));*/
 
 	printf("\ntest 3.4: n = strlen(dest) + 1\n");
 	compair_strlcat(&dest3[0], &dest3ft[0], &src3[0], &src3[0], strlen(dest3) + 1);
@@ -101,10 +101,8 @@ void	test_ft_strlcat()
 	compair_strlcat(&dest4[0], &dest4ft[0], &src4[0], &src4[0], strlen(src4) + 1);
 
 	/*printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
-	char src5[100] = "This is the source. It is much more bigger than the destination.";
+	char src5[100] = "This is the source. It is much more bigger than the destination.";	
 	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
-	compair_strlcat(&src5[10], &src5ft[10], &src5[0], &src5ft[0], strlen(src5) + 1);
-
 	printf("\ntest 6: overlap: d is in the middle of s\n");
 	char src6[50] = "Geeksfor\0";
 	char src6ft[50] = "Geeksfor\0";

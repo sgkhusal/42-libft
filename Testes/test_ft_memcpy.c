@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:12:05 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/23 20:23:48 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 11:47:16 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	test_ft_memcpy()
 	printf("&src4ft[17] : %p --endereco\n", &src4ft[17]);
 	puts(src4ft);*/
 
-	printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
+/*	printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
 	char src5[100] = "This is the source. It is much more bigger than the destination.";
 	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
 	size_t cpy5 = strlen(src5);
@@ -84,7 +84,7 @@ void	test_ft_memcpy()
 	char src6[50] = "Geeksfor";
 	char src6ft[50] = "Geeksfor";
 	compair_memcpy(src6+5, src6, src6ft+5, src6ft, strlen(src6)+1);
-
+*/
 	printf("\ntest 7: overlap: s is in the middle of d\n");
 	char dest7[100] = "Oi, tudo bem?";
 	char dest7ft[100] = "Oi, tudo bem?";

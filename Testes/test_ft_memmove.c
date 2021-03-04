@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/21 04:04:11 by sguilher          #+#    #+#             */
-/*   Updated: 2021/02/23 20:28:18 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:02:32 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	test_ft_memmove()
 	const char src4[100] = "This is the source. It is much more bigger than the destination.";
 	char dest4ft[] = "This is the destination.";
 	const char src4ft[100] = "This is the source. It is much more bigger than the destination.";
-	size_t cpy4 = strlen(src4);
+	size_t cpy4 = strlen(src4)+1;
 	compair_memmove(&dest4[0], &src4[0], &dest4ft[0], &src4ft[0], cpy4);
 
 	printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
