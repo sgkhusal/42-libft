@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:56:43 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/05 01:33:45 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/05 16:00:19 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	final_trim(char const *s1, char const *set)
 			return (i);
 		i--;
 	}
-	return (0);
+	return (-2);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
@@ -67,13 +67,11 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*trim;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
-	if (ft_strlen(set) == 0)
-		return ((char *)s1);
+	if (!set || ft_strlen(set) == 0)
+		return (ft_strdup(s1));
 	i = initial_trim(s1, set);
-	if (i == -1)
-		return ("\0");
 	end = final_trim(s1, set);
 	if (!(trim = (char *)malloc((end - i + 2) * sizeof(char))))
 		return (NULL);
@@ -84,6 +82,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 		i++;
 		j++;
 	}
+	if (i == -1)
+		trim[0] = '\0';
 	trim[j] = '\0';
 	return (trim);
 }

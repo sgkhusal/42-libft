@@ -6,7 +6,7 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:53:38 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/04 01:28:42 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/05 02:34:02 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ static unsigned int		topositive(int n)
 {
 	unsigned int	nb;
 
+	nb = n;
 	if (n < 0)
-		nb = (unsigned int)(n * (-1));
-	else
-		nb = (unsigned int)n;
+		nb = nb * (-1);
 	return (nb);
 }
 
@@ -28,9 +27,11 @@ static int				nbsize(int n)
 	unsigned int	nb;
 	int				size;
 
+	size = 0;
+	if (n <= 0)
+		size++;
 	nb = topositive(n);
-	size = 1;
-	while (nb > 10)
+	while (nb)
 	{
 		nb = nb / 10;
 		size++;
@@ -44,13 +45,11 @@ char					*ft_itoa(int n)
 	char			*charnb;
 	size_t			size;
 
+	nb = topositive(n);
 	size = nbsize(n);
-	if (n < 0)
-		size++;
 	if (!(charnb = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	charnb[size] = '\0';
-	nb = topositive(n);
 	while (size--)
 	{
 		charnb[size] = (nb % 10) + '0';

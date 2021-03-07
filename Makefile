@@ -6,7 +6,7 @@
 #    By: sguilher <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/12 02:08:39 by sguilher          #+#    #+#              #
-#    Updated: 2021/03/04 00:21:33 by sguilher         ###   ########.fr        #
+#    Updated: 2021/03/06 17:52:49 by sguilher         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,39 +26,40 @@ SRCS		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 				ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJS		= ${SRCS:.c=.o}
+OBJS		= $(SRCS:.c=.o)
+
+BONUS		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
+
+BONUSOBJS	= $(BONUS:.c=.o)
 
 CC		= gcc
 
 CFLAGS		= -Wall -Wextra -Werror
 
-RM		= rm -f # removes 'Read only File' without asking
+RM		= rm -f
 
 # Rules
 
-# Convert .c files to objects files (.o)
+all:	$(NAME)
+
+bonus:		$(BONUSOBJS)
+		ar rc $(NAME) $(BONUSOBJS)
+		ranlib $(NAME)
+
 %.o:	%.c
-		${CC} ${CFLAGS} -c $< -o $@
-# $< refere-se aos arquivos .c - a entrada
-# $@ = saida (no caso, OBJS)
+		$(CC) $(CFLAGS) -c $< -o $@
 
-${NAME}:	${OBJS}
-		ar rc $@ ${OBJS}
+$(NAME):	$(OBJS) $(BONUSOBJS)
+		ar rc $@ $(OBJS) $(BONUSOBJS)
 		ranlib $@
-# ran lib cria um sumario da biblioteca que permite a compilacao mais rapida
 
-all:		${NAME}
-
-# remove unnecessary arquives (arquives used for compilation)
 clean:
-		${RM} ${OBJS}
+		$(RM) $(OBJS) $(BONUSOBJS)
 
-# delete the library and compilation arquives
 fclean:		clean
-		${RM} ${NAME}
+		$(RM) $(NAME)
 
-# to force a recompilation
 re:		fclean all
 
 .PHONY: all clean fclean re
-# .PHONY is a special rule used to specify that the target is not a file. This way it won`t conflict if you have files named with the specified rules names
