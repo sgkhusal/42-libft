@@ -6,13 +6,13 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 21:25:20 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/04 11:16:47 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/07 02:11:51 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-//#include <bsd/string.h>
+#include <bsd/string.h>
 
 size_t	ft_strlcat (char *dst, const char *src, size_t size);
 void	compair_strlcat(char *d1, char *d2, char *s1, char *s2, int n);
@@ -101,7 +101,7 @@ void	test_ft_strlcat()
 	compair_strlcat(&dest4[0], &dest4ft[0], &src4[0], &src4[0], strlen(src4) + 1);
 
 	/*printf("\ntest 5: overlap: dest inicialize in the middle of src\n");
-	char src5[100] = "This is the source. It is much more bigger than the destination.";	
+	char src5[100] = "This is the source. It is much more bigger than the destination.";
 	char src5ft[100] = "This is the source. It is much more bigger than the destination.";
 	printf("\ntest 6: overlap: d is in the middle of s\n");
 	char src6[50] = "Geeksfor\0";

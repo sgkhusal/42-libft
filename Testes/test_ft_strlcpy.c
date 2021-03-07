@@ -6,13 +6,13 @@
 /*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 14:12:13 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/04 13:10:11 by sguilher         ###   ########.fr       */
+/*   Updated: 2021/03/07 02:12:21 by sguilher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-//#include <bsd/string.h>
+#include <bsd/string.h>
 
 size_t	ft_strlcpy (char *dst, const char *src, size_t size);
 void	compair_strlcpy(char *d1, char *d2, char *s1, char *s2, size_t n);
