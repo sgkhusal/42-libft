@@ -2,14 +2,14 @@
 
 42 school Libft project + other functions
 
-## Getting Started
+## Using the library
 
-Include the library libft.h in your C projects:
+* clone this repo
+* run ```make all```
+* Include the library libft.h in your C projects:
 ```
 #include "libft.h"
 ```
-
-Run ```make```
 
 ## Tests
 
@@ -25,7 +25,7 @@ The tests helps to verified specific situations and can help pass the others tes
 * [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
 ### Using the tests: 
-* copy main.c file and <Testes> folder to your directory
+* copy main.c file and <Testes> folder to your library directory
 * edit main.c file
 * run your makefile
-* gcc main.c Testes/test-name.c libft.a (edit test_name)
+* gcc main.c Testes/<test-name>.c libft.a (edit <test_name>)
