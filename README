@@ -1,25 +1,31 @@
-This repository have the development for 42 Libft project and others functions added after.
+# Libft
 
-It contains tests to check the functions from Libft project.
+42 school Libft project + other functions
+
+## Getting Started
+
+Include the library libft.h in your C projects:
+```
+#include "libft.h"
+```
+
+Run ```make```
+
+## Tests
+
+Folder "Testes": tests to check the functions from Libft project.
 Do not test all the functions together.
-If your code pass the tests it is not a indication that your functions will pass in moulinette or norminette tests.
+There is no guarantee that your code will pass in moulinette or norminette tests if your code pass in those tests.
 
 The tests helps to verified specific situations and can help pass the others tests commonly used for this project:
 
-Libftest
-https://github.com/jtoty/Libftest
+> [Libftest](https://github.com/jtoty/Libftest)
+> [libftTester](https://github.com/Tripouille/libftTester)
+> [libft-unit-test](https://github.com/alelievr/libft-unit-test)
+> [libft-war-machine](https://github.com/ska42/libft-war-machine)
 
-libftTester
-https://github.com/Tripouille/libftTester 
-
-libft-unit-test
-https://github.com/alelievr/libft-unit-test
-
-libft-war-machine
-https://github.com/ska42/libft-war-machine
-
-To use the tests: 
-- copy main.c and Testes to your directory
-- edit main.c file
-- run your makefile
-- gcc main.c Testes/test-name.c libft.a (edit test_name)
+### Using the tests: 
+> copy main.c file and <Testes> folder to your directory
+> edit main.c file
+> run your makefile
+> gcc main.c Testes/test-name.c libft.a (edit test_name)
