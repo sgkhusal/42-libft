@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 02:55:08 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/03 18:49:44 by sguilher         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:57:31 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static size_t	wcount(char const *s, char c)
 
 static size_t	lcount(const char *s, char c)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (s[count] != c && s[count])
@@ -42,25 +42,24 @@ static size_t	lcount(const char *s, char c)
 	return (count);
 }
 
-static void		free_pointer(char *p)
+static void	free_pointer(char **p, int i)
 {
+	while (i <= 0)
+	{
+		free(p[i]);
+		p[i] = NULL;
+		i--;
+	}
 	free(p);
 	p = NULL;
 }
 
-char			**ft_split(char const *s, char c)
+static void	ft_split_split(char const *s, char **words, char c, size_t wc)
 {
-	size_t	wc;
-	size_t	lc;
 	size_t	i;
 	int		k;
-	char	**words;
+	size_t	lc;
 
-	if (!s)
-		return (NULL);
-	wc = wcount(s, c);
-	if (!(words = (char **)malloc((wc + 1) * sizeof(char *))))
-		return (NULL);
 	i = 0;
 	k = 0;
 	while (i < wc)
@@ -68,11 +67,29 @@ char			**ft_split(char const *s, char c)
 		while (s[k] == c && s[k])
 			k++;
 		lc = lcount(&s[k], c);
-		if (!(words[i] = ft_substr(&s[k], 0, lc)))
-			free_pointer(words[i]);
+		words[i] = ft_substr(&s[k], 0, lc);
+		if (!words[i])
+		{
+			free_pointer(words, i);
+			return ;
+		}
 		k = k + lc;
 		i++;
 	}
 	words[i] = NULL;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	wc;
+	char	**words;
+
+	if (!s)
+		return (NULL);
+	wc = wcount(s, c);
+	words = (char **)malloc((wc + 1) * sizeof(char *));
+	if (!words)
+		return (NULL);
+	ft_split_split(s, words, c, wc);
 	return (words);
 }

@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/02 19:56:43 by sguilher          #+#    #+#             */
-/*   Updated: 2022/02/16 15:38:44 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/16 16:02:43 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	i = initial_trim(s1, set);
 	end = final_trim(s1, set);
-	if (!(trim = (char *)malloc((end - i + 2) * sizeof(char))))
+	trim = (char *)malloc((end - i + 2) * sizeof(char));
+	if (!trim)
 		return (NULL);
 	j = 0;
 	while (i <= end)
