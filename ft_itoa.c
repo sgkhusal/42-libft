@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sguilher <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:53:38 by sguilher          #+#    #+#             */
-/*   Updated: 2021/03/05 02:34:02 by sguilher         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:47:20 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int		topositive(int n)
+static unsigned int	topositive(int n)
 {
 	unsigned int	nb;
 
@@ -22,7 +22,7 @@ static unsigned int		topositive(int n)
 	return (nb);
 }
 
-static int				nbsize(int n)
+static int	nbsize(int n)
 {
 	unsigned int	nb;
 	int				size;
@@ -39,7 +39,7 @@ static int				nbsize(int n)
 	return (size);
 }
 
-char					*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	unsigned int	nb;
 	char			*charnb;
@@ -47,7 +47,8 @@ char					*ft_itoa(int n)
 
 	nb = topositive(n);
 	size = nbsize(n);
-	if (!(charnb = (char *)malloc((size + 1) * sizeof(char))))
+	charnb = (char *)malloc((size + 1) * sizeof(char));
+	if (!charnb)
 		return (NULL);
 	charnb[size] = '\0';
 	while (size--)
